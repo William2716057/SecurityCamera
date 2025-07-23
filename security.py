@@ -5,10 +5,10 @@ import numpy as np
 #tone for detection
 def playTone():
     p = pyaudio.PyAudio()
-    volume = 0.5     # range [0.0, 1.0]
+    volume = 0.5    
     fs = 44100       # sampling rate, Hz
-    duration = 0.2   # seconds
-    f = 440.0        # sound frequency (Hz)
+    duration = 3   # seconds
+    f = 900.0        # sound frequency (Hz)
 
     # generate sine wave tone
     samples = (np.sin(2*np.pi*np.arange(fs*duration)*f/fs)).astype(np.float32)
@@ -59,7 +59,7 @@ while True:
     cv2.imshow("Figure detect", frame)
 
     key = cv2.waitKey(1)
-    if key == 27:  # ESC key
+    if key == 27:  
         break
 
 cap.release()
